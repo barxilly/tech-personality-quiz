@@ -28,6 +28,9 @@ const questions = [
   ['What browser do you use?', 'Safari', 'Firefox', 'Chrome (Chromium)'],
   ['Which is the best?', 'PirateSoftware', 'Linus Tech Tips', 'MrWhoseTheBoss'],
   ['Where are you storing your files non-locally?', 'NAS', 'Google Drive', 'USB Drive'],
+  ['Which is the best of these video games?', 'Minecraft', 'Doom', 'Fortnite'],
+  ['Which of these is the most evil?', 'Apple', 'Microsoft', 'Google'],
+  ['Which Windows version was the best?', 'Windows 7', 'Windows 8', 'Windows XP'],
 ]
 
 const deets = [
@@ -40,7 +43,10 @@ const deets = [
   ['B', 'C', 'A'], // Where do you host your website? // 7
   ['C', 'A', 'B'], // What browser do you use? // 8
   ['A', 'B', 'D'], // Which is the best? // 9
-  ['A', 'B', 'D'], // Where are you storing your files non-locally? // 10
+  ['A', 'C', 'D'], // Where are you storing your files non-locally? // 10
+  ['B', 'A', 'D'], // Which is the best of these video games? // 11
+  ['D', 'B', 'A'], // Which of these is the most evil? // 12
+  ['B', 'D', 'A'], // Which Windows version was the best? // 13
 ]
 
 const images = [
@@ -93,7 +99,22 @@ const images = [
     'https://www.westerndigital.com/content/dam/store/en-us/assets/products/desktop/my-cloud-pro-series-pr4100/gallery/my-cloud-pro-series-pr4100-Hero1.png.thumb.1280.1280.png',
     'https://www.computerhope.com/issues/pictures/google-drive-logo.png',
     'https://www.westerndigital.com/content/dam/store/en-us/assets/products/usb-flash-drives/cruzer-blade-usb-2-0/gallery/cruzer-blade-usb-2-0-angle.png.thumb.1280.1280.png'
-  ]
+  ], // Where are you storing your files non-locally?
+  [
+    'https://preview.redd.it/i-improved-the-minecraft-launcher-icon-v0-jrrexgfwbyob1.png?width=1024&format=png&auto=webp&s=54bebe736f23c7d2f1d183b34cbd82645b1c7e6a',
+    'https://ph.cleanpng.com/downloadpng/f6d9a54b903c7b6647aca6fcb4a2e758/L4Dxd6FrigIwappyR9p4cTBlR7XqgfZlamU1fahuYUmzcoG6U8Q3OmFme9M5N0C3RHB3jvc=.png',
+    'https://static.cdnlogo.com/logos/f/35/fortnite.png'
+  ], // Which is the best of these video games?
+  [
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Apple_Computer_Logo_rainbow.svg/1862px-Apple_Computer_Logo_rainbow.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Microsoft_365_Copilot_Icon.svg/1024px-Microsoft_365_Copilot_Icon.svg.png',
+    'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+  ], // Which of these is the most evil?
+  [
+    'https://archive.org/download/windows-logo-2006/Windows_logo__2006_.png',
+    'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7da8855e-55d1-4cd3-ba5b-f8f32c4cdc1d/df4yf7k-e676b275-3210-407c-ae4f-aafd8860d752.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdkYTg4NTVlLTU1ZDEtNGNkMy1iYTViLWY4ZjMyYzRjZGMxZFwvZGY0eWY3ay1lNjc2YjI3NS0zMjEwLTQwN2MtYWU0Zi1hYWZkODg2MGQ3NTIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.L6Jd7PfGvNjt-IhDswZZxNWRrqdh18yYqoqYZoUumUQ',
+    'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8b140052-cc50-4879-9382-26a89a456826/dfom9ho-0e411c0f-e367-480b-8c90-77ea71f64628.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhiMTQwMDUyLWNjNTAtNDg3OS05MzgyLTI2YTg5YTQ1NjgyNlwvZGZvbTloby0wZTQxMWMwZi1lMzY3LTQ4MGItOGM5MC03N2VhNzFmNjQ2MjgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._bgM5viRjgIDOMgIvGopnCOPfWOnS6zysnd4X4zHx5I'
+  ], // Which windows version was the best?
 ]
 
 function App() {
