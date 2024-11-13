@@ -79,7 +79,7 @@ function App() {
       <Center style={{ verticalAlign: 'middle', height: '100vh' }}>
         <Stack>
           <Progress value={0} id="prog" />
-          <Text size="xl" className='q' align="center">Question</Text>
+          <Text size="xl" className='q'>Question</Text>
 
           <Flex className='ansflex' >
             <Card shadow="sm" padding="lg" radius="lg" withBorder className='anscard' onClick={() => bye(1)}>
@@ -92,7 +92,7 @@ function App() {
                 />
               </Card.Section>
 
-              <Text size="xl" weight={700} align="center" id="ans1">
+              <Text size="xl" id="ans1">
                 ANS 1
               </Text>
             </Card>
@@ -106,7 +106,7 @@ function App() {
                 />
               </Card.Section>
 
-              <Text size="xl" weight={700} align="center" id="ans2">
+              <Text size="xl" id="ans2">
                 ANS 2
               </Text>
             </Card>
@@ -120,7 +120,7 @@ function App() {
                 />
               </Card.Section>
 
-              <Text size="xl" weight={700} align="center" id="ans3">
+              <Text size="xl" id="ans3">
                 ANS 3
               </Text>
             </Card>
@@ -134,15 +134,15 @@ function App() {
 
 function bye(int: number) {
   console.log(int)
-  const cards = document.getElementsByClassName('anscard')
+  const cards = document.getElementsByClassName('anscard') as HTMLCollectionOf<HTMLElement>
   cards[int - 1].style.backgroundColor = 'aquamarine'
-  const header = document.getElementsByClassName('q')[0]
-  const a1 = document.getElementById('ans1')
+  const header = document.getElementsByClassName('q')[0] as HTMLElement
+  /*const a1 = document.getElementById('ans1')
   const a2 = document.getElementById('ans2')
   const a3 = document.getElementById('ans3')
   const i1 = document.getElementById('img1')
   const i2 = document.getElementById('img2')
-  const i3 = document.getElementById('img3')
+  const i3 = document.getElementById('img3')*/
   for (let i = 0; i < cards.length; i++) {
     cards[i].style.animation = 'upandaway 0.7s forwards'
     setTimeout(() => {
@@ -153,11 +153,11 @@ function bye(int: number) {
   header.style.animation = 'upandaway 0.7s forwards'
   setTimeout(() => {
     current += 1
-    const prog = document.getElementsByClassName('m_2242eb65')[0]
+    const prog = document.getElementsByClassName('m_2242eb65')[0] as HTMLElement
     console.log(prog)
     prog.style.width = (current / questions.length) * 100 + '%'
     if (current >= questions.length) {
-      const ansflex = document.getElementsByClassName('ansflex')[0]
+      const ansflex = document.getElementsByClassName('ansflex')[0] as HTMLElement
       ansflex.style.display = 'none'
       if (A > B && A > C && A > D) {
         header.innerHTML = 'A'
@@ -187,13 +187,13 @@ function bye(int: number) {
 }
 
 function load() {
-  const a1 = document.getElementById('ans1')
-  const a2 = document.getElementById('ans2')
-  const a3 = document.getElementById('ans3')
-  const i1 = document.getElementById('img1')
-  const i2 = document.getElementById('img2')
-  const i3 = document.getElementById('img3')
-  const q = document.getElementsByClassName('q')[0]
+  const a1 = document.getElementById('ans1') as HTMLElement
+  const a2 = document.getElementById('ans2') as HTMLElement
+  const a3 = document.getElementById('ans3') as HTMLElement
+  const i1 = document.getElementById('img1') as HTMLImageElement
+  const i2 = document.getElementById('img2') as HTMLImageElement
+  const i3 = document.getElementById('img3') as HTMLImageElement
+  const q = document.getElementsByClassName('q')[0] as HTMLElement
   q.innerHTML = questions[current][0]
   a1.innerHTML = questions[current][1]
   a2.innerHTML = questions[current][2]
