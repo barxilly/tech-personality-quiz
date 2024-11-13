@@ -1,6 +1,11 @@
 body {
-    overflow: hidden;
+    overflow: hidden !important;
     padding: 1em;
+}
+
+#cen,
+#root {
+    overflow: hidden !important;
 }
 
 .m_9e117634 {
@@ -15,6 +20,11 @@ body {
 
 #prog {
     width: 80vw !important;
+}
+
+.anscard {
+    cursor: pointer;
+    user-select: none;
 }
 
 @media (max-width: 768px) {
@@ -48,6 +58,7 @@ body {
         width: 25vw !important;
         height: 25vw !important;
         padding: 2em;
+        object-fit: contain !important;
     }
     .anscard {
         width: 25vw;
@@ -57,9 +68,9 @@ body {
         margin: 0.3em;
     }
     .anscard:hover {
-        transform: scale(1.01);
-        background-color: rgb(253, 253, 253);
+        transform: scale(1.025);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+        transition: all 0.3s ease-in-out;
     }
 }
 
@@ -71,8 +82,11 @@ body {
     30% {
         opacity: 0;
     }
-    100% {
+    99% {
         transform: translateY(-500px);
+        opacity: 0;
+    }
+    100% {
         opacity: 0;
     }
 }
@@ -86,7 +100,6 @@ body {
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
         opacity: 1;
     }
 }
