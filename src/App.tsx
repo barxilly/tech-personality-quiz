@@ -23,7 +23,9 @@ const questions = [
   ['What is most fun?', 'Hardware Projects', 'Software Projects', 'Server Projects'],
   ['Which do you use the most?', 'HTML', 'Python', 'C'],
   ['Which IDE is the best?', 'VS Code', 'IntelliJ', 'Vim'],
-  ['What do you use for emails', 'Gmail', 'Outlook', 'Self-host']
+  ['What do you use for emails', 'Gmail', 'Outlook', 'Self-host'],
+  ['Where do you host your website?', 'Github', 'Vercel', 'My server'],
+  ['What browser do you use?', 'Safari', 'Firefox', 'Chrome (Chromium)'],
 ]
 
 const deets = [
@@ -32,7 +34,9 @@ const deets = [
   ['A', 'B', 'D'],
   ['D', 'B', 'A'],
   ['B', 'C', 'A'],
-  ['B', 'D', 'A']
+  ['B', 'D', 'A'],
+  ['B', 'C', 'A'],
+  ['C', 'A', 'B'],
 ]
 
 const images = [
@@ -65,6 +69,16 @@ const images = [
     'https://cdn.icon-icons.com/icons2/2631/PNG/512/gmail_new_logo_icon_159149.png',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/826px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png',
     'https://www.freeiconspng.com/thumbs/email-server-icon-png/mail-server-icon-png-1.png'
+  ],
+  [
+    'https://www.svgrepo.com/show/475654/github-color.svg',
+    'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
+    'https://cdn2.iconfinder.com/data/icons/firewall-security/500/vab286_4_server_station_isometric_cartoon_center_computer_data-512.png'
+  ],
+  [
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/2057px-Safari_browser_logo.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Firefox_Developer_Edition_logo%2C_2019.svg/1997px-Firefox_Developer_Edition_logo%2C_2019.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/2048px-Google_Chrome_icon_%28February_2022%29.svg.png'
   ]
 ]
 
@@ -160,15 +174,15 @@ function bye(int: number) {
       const ansflex = document.getElementsByClassName('ansflex')[0] as HTMLElement
       ansflex.style.display = 'none'
       if (A > B && A > C && A > D) {
-        header.innerHTML = 'A'
+        header.innerHTML = 'Your personality type is \'I use Arch btw\''
       } else if (B > A && B > C && B > D) {
-        header.innerHTML = 'B'
+        header.innerHTML = 'Your personality type is \'Most Default Programmer\''
       } else if (C > A && C > B && C > D) {
-        header.innerHTML = 'C'
+        header.innerHTML = 'Your personality type is \'Money go bye-bye\''
       } else if (D > A && D > B && D > C) {
-        header.innerHTML = 'D'
+        header.innerHTML = 'Your personality type is \'I don\'t actually know what a computer is\''
       } else {
-        header.innerHTML = '?'
+        header.innerHTML = 'Your personality type is \'Complete and utter nutcase\''
       }
     } else {
       if (deets[current][0] === 'A') {
